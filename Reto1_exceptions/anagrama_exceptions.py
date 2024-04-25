@@ -30,7 +30,12 @@ def find_anagrams(lista):
 
 if __name__ == "__main__":
     lista = []
-    num_elementos = int(input("Ingrese el numero de elementos de la lista: "))
+    try:
+        num_elementos = int(input("Ingrese el numero de elementos de la lista: "))
+    except:
+        num_elementos = 0
+        print("Ingrese un número entero")
+        
     i = 0
     while i < num_elementos:
         num = input("Ingrese las palabras a añadir a la lista: ")
@@ -42,6 +47,6 @@ if __name__ == "__main__":
         print(lista_primer)
     except:
         print("El número de elementos debe ser mayor a 1")
-
+# La primera excepción atrapa el error ValueError: invalid literal for int() with base 10, por no inresar un entero sino un string.
 # Se incluye la excepción a la hora de seleccionar el primer elemento de la lista que se retorna, ya que si el número de elementos es 0, no se puede acceder a ese índice. Por eso en el except, se imprime que diga un número mayor a 0
 
